@@ -1,0 +1,116 @@
+*{ /*esto es como una normalizacion para el navegador para resetear los estilos por defecto que trae el navegador, es decir, que no tenga margenes, padding, etc */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*esto es para que el padding y el margin no afecten el tamaño de los elementos, es decir, que el tamaño de los elementos sea el mismo que el que se le asigna */
+}
+
+:root /*root sirve para declara variables globales en css */
+{
+    --white: #fafafb;
+    --purple: #9a67ea;
+    --blue-light: #04d4c3;
+    --blue-dark: #2a73c2;
+    --green: #2c7b90;
+}
+
+body{
+    background: linear-gradient(to bottom, var(--blue-dark), var(--blue-light)); /*esto es para un degradado usando las variables previamente declaradas, aqui el linear-gradient es una funcion de css que permite hacer degradados, to bottom es para que el degradado sea de arriba hacia abajo */
+    height: 100vh; /*vh significa viewport height, es decir, el alto de la pantalla y en este caso se usa 100 porque se quiere que el degradado ocupe toda la pantalla */
+    /*Lo interesante del vh es que si la pantalla es mas grande o mas pequeña, el degradado se ajusta a la pantalla */
+    font-family: 'Walter Turncoat', sans-serif; /*esto es para cambiar la fuente de la pagina, en este caso la primera es una sacada de google fonts que la insertamos en la etiqueta head usando link */
+
+}
+
+.container {/*En este caso container abarca todo el contenido de la pagina ya que es nuestro div principal */
+    max-width: 80%; /*esto es para que el div abarque el 80% del ancho de la pantalla */
+    width: 400px;
+    margin: 0 auto; /*esto es para que el div se centre en la pantalla */
+    height: 600px; /*esto es para darle una altura al div */
+
+}
+
+/* 3 perfiles */
+.perfil h1{ /*Este perfil esta llamando al titulo que dice bienvenido, se utiliza punto. porque es una clase*/
+ color:var(--white); /*esto es para cambiar el color del texto a blanco, se utiliza var para llamar a las variables previamente declaradas */
+}
+
+.perfil span{/*este perfil esta llamando al span que contiene el texto de vamos a cumplir tus metas, se utiliza punto. porque es una clase */
+    color:var(--white);
+    letter-spacing: 2px; /*esto es para darle un espaciado entre letras al texto */
+}
+
+#fecha{ /*este perfil esta llamando al id fecha, se utiliza # porque es un id */
+    color:var(--white);
+    padding: 50px 0 5px 0;/*esto es para darle un espaciado alrededor del texto, en este caso 50px arriba, 0 a la derecha, 5px abajo y 0 a la izquierda */
+}
+
+/*Seccion: Agregar Tarea*/  
+.agregar-tarea{
+    background-color: var(--white);
+    border-radius: 15px;/*esto es para darle bordes redondeados al div o contenedor, por defecto abarca todo el anchura de la pantalla */
+    height: 70px;/*esto es para darle una altura al contenedor */
+    display: flex;/*esto es para que los elementos dentro del contenedor se acomoden en fila */
+    align-items: center;/*esto es para que los elementos dentro del contenedor se acomoden en el centro */
+    padding: 10px;/*esto es para darle un espaciado alrededor del contenedor */
+    gap: 70px;/*este gap lo que hace es separacion entre los objetos dentro del div, en este caso me da una separacion entre el input y el icono */
+
+}
+
+.agregar-tarea input{
+    width: 100%;/*esto es para que el input ocupe todo el ancho del contenedor */
+    height: 100%;/*esto es para que el input ocupe todo el alto del contenedor */
+    border-radius: 8px ;
+    border: none;/*esto es para quitar el borde del input */
+    background-color: var(--white);/*esto es para cambiar el color del input a blanco */
+}
+
+.agregar-tarea i{
+    font-size: 50px;/*esto es para cambiar el tamaño del icono, usamos font-size porque es un icono, si usaramos width y height, no funcionaria */
+    color: var(--purple);/*esto es para cambiar el color del icono */ 
+
+}
+
+.agregar-tarea i:hover{/*el hover es cuando se pasa el cursor, en este caso esta tomando al icono */
+    transform: scale(1.2);/*esto es para que el icono aumente de tamaño cuando se pase el cursor por encima */
+    cursor: pointer;/*esto es para que el cursor cambie a una manita cuando se pase por encima del icono */
+}
+
+.agregar-tarea input::placeholder{/*esto es para cambiar el color del placeholder del input */
+   font-size: 1.1rem;/*esto es para cambiar el tamaño del placeholder , rem quiere decir que el tamaño del texto va a ser el mismo que el tamaño del texto del body */
+   color: var(--purple);/*esto es para cambiar el color del placeholder */
+}
+
+/*Seccion: Tareas*/
+.seccion-tarea h3{
+ color: var(--white);/*esto es para cambiar el color del texto a blanco */
+ margin-bottom: 20px;/*esto es para darle un espaciado alrededor del texto, en este caso 20px abajo */
+
+}
+
+.seccion-tarea li{
+display: flex;/*esto es para que los elementos dentro del contenedor se acomoden en fila */
+background:linear-gradient(to bottom, var(--blue-dark), var(--green));/*esto es para darle un degradado a los elementos de la lista */
+border-radius: 15px;/*esto es para darle bordes redondeados a los elementos de la lista */
+padding: 10px;/*esto es para darle un espaciado alrededor de los elementos de la lista */
+align-items: center;/*esto es para que los elementos dentro del contenedor se acomoden en el centro */
+justify-content: space-between; /*esto es para que los elementos dentro del contenedor se acomoden en el centro y se separen entre ellos */
+margin: 5px 0;/*esto es para darle un espaciado alrededor de los elementos de la lista, en este caso 5px arriba y abajo y 0 a los lados */
+}
+
+.seccion-tarea i{
+ font-size: 30px;/*esto es para cambiar el tamaño del icono, usamos font-size porque es un icono, si usaramos width y height, no funcionaria */
+}
+.seccion-tarea i:hover{/*el hover es cuando se pasa el cursor, en este caso esta tomando al icono */
+    color: var(--white);/*esto es para cambiar el color del icono */
+    cursor: pointer;/*esto es para que el cursor cambie a una manita cuando se pase por encima del icono */
+}
+
+.seccion-tarea >ul p{ /*el > es para que solo tome en cuenta a los ul que esten dentro de la seccion-tarea */
+  font-size: 1.2rem;/*esto es para cambiar el tamaño del texto */
+
+}
+
+.line-through{
+    text-decoration: line-through;/*esto es para que el texto tenga una linea atravesada */
+    color: var(--white);/*esto es para cambiar el color del texto a blanco */
+}
