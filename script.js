@@ -9,6 +9,28 @@ const lineThrough = 'line-through'
 let LIST
 
 let id // para que inicie en 0 cada tarea tendra un id diferente
+// Definir un array con frases para cada día de la semana
+const frasesDiarias = [
+    "Hoy es un buen día para cumplir tus metas.",
+    "¡A por todas! Hoy será un día productivo.",
+    "Recuerda: cada pequeño paso te acerca a tus objetivos.",
+    "No hay límites para lo que puedes lograr hoy.",
+    "Sé imparable: hoy es tu día.",
+    "El éxito te espera al final del día. ¡Adelante!",
+    "Aprovecha cada momento: hoy es tu día para brillar."
+  ];
+
+// Obtener el elemento donde se mostrará la frase
+const fraseDelDia = document.querySelector('#frase-del-dia');
+
+// Obtener el día de la semana (0 para domingo, 1 para lunes, ..., 6 para sábado)
+const diaDeLaSemana = (new Date()).getDay();
+
+// Obtener la frase correspondiente al día de la semana actual
+const fraseActual = frasesDiarias[diaDeLaSemana];
+
+// Actualizar el contenido del elemento HTML con la frase del día
+fraseDelDia.textContent = fraseActual;
 
 //creacion de fecha actualizada 
 
